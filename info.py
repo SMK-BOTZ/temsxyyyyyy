@@ -15,18 +15,18 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '28243586'))
 API_HASH = environ.get('API_HASH', '4022d5686b9b7a7cf8891205921a0ab3')
-BOT_TOKEN = environ.get('BOT_TOKEN', "7421003986:AAF8q0MDtAyDEcnD9pcQmM3a7MHbCBu96kU")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7543898375:AAFcmqREiZiwR1WGr16j6qXDW8e1kvJSWiY")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://telegra.ph/file/65fe86fc02a73f6fcf0ce.jpg https://telegra.ph/file/6fa70325813885809a64a.jpg https://telegra.ph/file/e06afc1e7abbcd8d4213a.jpg https://telegra.ph/file/3f4040b320d9b7840200a.jpg https://telegra.ph/file/3950fad740fb8ea894df7.jpg')).split() #SAMPLE PIC
+PICS = (environ.get('PICS', 'https://graph.org/file/f703f2255bc7b634631e2-60a8bdce8d1edd02c9.png')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/e20b5fdaf217252964202.jpg")
-MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/85d361ab4cb6511006022.mp4")
+MELCOW_VID = environ.get("MELCOW_VID", "https://graph.org/file/f703f2255bc7b634631e2-60a8bdce8d1edd02c9.png")
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/86b7b7e2aa7e38f328902.jpg")
-SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://telegra.ph/file/734170f40b8169830d821.jpg'))
-CODE = (environ.get('CODE', 'https://telegra.ph/file/72f425007b22d28bd935e.jpg'))
+SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://graph.org/file/f703f2255bc7b634631e2-60a8bdce8d1edd02c9.png'))
+CODE = (environ.get('CODE', 'https://graph.org/file/7eb510dd457148fa932c5-f470e64a3e9a0919b7.jpg'))
 
 #stream link shortner
 STREAM_SITE = (environ.get('STREAM_SITE', 'ziplinker.net'))
