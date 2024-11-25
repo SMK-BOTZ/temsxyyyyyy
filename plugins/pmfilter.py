@@ -1484,7 +1484,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
                     InlineKeyboardButton("🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=lazy_download),
                     InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🧿", url=lazy_stream)
@@ -1541,7 +1541,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
                     InlineKeyboardButton('☆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
@@ -1577,7 +1577,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('💵 ᴘᴀʏ ᴠɪᴀ ᴜᴘɪ ɪᴅ 💵', callback_data='upi_info')
         ],[
@@ -1599,7 +1599,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('📲 ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ʜᴇʀᴇ', user_id=int(767250672))
         ],[
@@ -1632,7 +1632,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('📲 ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ', user_id=int(767250672))
         ],[
@@ -1669,7 +1669,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('• ꜰʀᴇᴇ ᴛʀɪᴀʟ •', callback_data='free')
         ],[
@@ -1698,7 +1698,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('⚜️ ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ɢᴇᴛ ꜰʀᴇᴇ ᴛʀɪᴀʟ', callback_data="give_trial")
         ],[
@@ -1722,7 +1722,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
@@ -1746,7 +1746,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
@@ -1770,7 +1770,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
@@ -1794,7 +1794,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
@@ -1819,7 +1819,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
@@ -1843,7 +1843,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('☎️ ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ', user_id=int(767250672))
         ],[
@@ -1868,7 +1868,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('• ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ •', url='https://t.me/movieboxbot1')
         ],[
@@ -1893,7 +1893,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
         ]]
@@ -1911,7 +1911,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
         ]]
@@ -1931,7 +1931,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
         ]]
@@ -1950,7 +1950,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('• ʙᴏᴛ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='admic')
         ], [
@@ -1972,7 +1972,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
         ], [
@@ -2012,7 +2012,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('⟲ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
@@ -2038,7 +2038,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('⟲ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
@@ -2063,7 +2063,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton("1 / 3", callback_data="pagesn1"),
             InlineKeyboardButton("ɴᴇxᴛ ⋟", callback_data="shortlink_info2")
@@ -2083,7 +2083,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton("⋞ ʙᴀᴄᴋ", callback_data="shortlink_info"),
             InlineKeyboardButton("2 / 3", callback_data="pagesn1"),
@@ -2104,7 +2104,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
             InlineKeyboardButton("⋞ ʙᴀᴄᴋ", callback_data="shortlink_info2"),
             InlineKeyboardButton("3 / 3", callback_data="pagesn1")
@@ -2125,7 +2125,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🎫', callback_data='premium_info'),
                     InlineKeyboardButton('💸', callback_data='shortlink_info'),
                     InlineKeyboardButton('🖥', callback_data='help'),
-                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                    InlineKeyboardButton('📜', callback_data='about')
                 ],[
                     InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="about")
                   ]]
