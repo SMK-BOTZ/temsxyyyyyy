@@ -26,10 +26,17 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
                     InlineKeyboardButton('☆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('⚡️ ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ', url=f'https://t.me/moviesvisit'),
-                    InlineKeyboardButton('📜 ᴅɪꜱᴄᴜꜱꜱɪᴏɴ', url=f'https://t.me/movieboxbot1')
+                    InlineKeyboardButton('⚡️ ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ', url=f'https://t.me/movieboxbot1'),
+                    InlineKeyboardButton('📜 ᴅɪꜱᴄᴜꜱꜱɪᴏɴ', url=f'https://t.me/moviesvisit')
                 ],[
                     InlineKeyboardButton('🍁 ʜᴏᴡ ᴛᴏ ᴜꜱᴇ 🍁', url="https://t.me/{temp.U_NAME}?start=help")
                   ]]
