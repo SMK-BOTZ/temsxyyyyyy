@@ -98,7 +98,7 @@ async def give_filter(client, message):
             return
         else:
             return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention},\n\nʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛ ɪꜱ ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ ✅\n\n📂 ꜰɪʟᴇꜱ ꜰᴏᴜɴᴅ : {str(total_results)}\n🔍 ꜱᴇᴀʀᴄʜ :</b> <code>{search}</code>\n\n<b>‼️ ᴛʜɪs ɪs ᴀ <u>sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ</u> sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\n📝 ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ : 👇</b>",   
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔍 ᴊᴏɪɴ ᴀɴᴅ ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ 🔎", url=f"https://t.me/MoviesLinkSearchBot2")]]))
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔍 ᴊᴏɪɴ ᴀɴᴅ ꜱᴇᴀʀᴄʜ ʜᴇʀᴇ 🔎", url=f"https://t.me/movieboxbot1")]]))
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
@@ -109,7 +109,7 @@ async def pm_text(bot, message):
     if user_id in ADMINS: return # ignore admins
     await message.reply_text(
          text=f"<b>ʜᴇʏ {user} 😍 ,\n\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ 👇</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/MoviesLinkSearchBot2")]])
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ", url=f"https://t.me/movieboxbot1")]])
     )
     await bot.send_message(
         chat_id=LOG_CHANNEL,
@@ -1479,10 +1479,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = []
             if await db.has_premium_access(user_id):                               
                 buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
                     InlineKeyboardButton("🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ", url=lazy_download),
                     InlineKeyboardButton("ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🧿", url=lazy_stream)
                 ],[
-                    InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url='https://t.me/HP_MOVIES_WORLD')
+                    InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url='https://t.me/moviesvisit')
                 ]]
             else:
                 await query.answer("🚸 ɴᴏᴛᴇ :\nᴀᴅ-ꜰʀᴇᴇ ꜱᴇʀᴠɪᴄᴇ ɪꜱ ᴏɴʟʏ ꜰᴏʀ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ.\n\nᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴄʜᴇᴄᴋ ᴘʟᴀɴꜱ.", show_alert=True)
@@ -1529,16 +1536,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('☆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
                 ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
-                    InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇꜱ •', callback_data='channels')
+                    InlineKeyboardButton('☆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ☆', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('• ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='help'),
-                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
+                    InlineKeyboardButton('⚡️ ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ', url=f'https://t.me/movieboxbot1'),
+                    InlineKeyboardButton('📜 ᴅɪꜱᴄᴜꜱꜱɪᴏɴ', url=f'https://t.me/moviesvisit')
                 ],[
-                    InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
+                    InlineKeyboardButton('🍁 ʜᴏᴡ ᴛᴏ ᴜꜱᴇ 🍁', url="https://t.me/{temp.U_NAME}?start=help")
                   ]]
+
         
         reply_markup = InlineKeyboardMarkup(buttons)
         current_time = datetime.now(pytz.timezone(TIMEZONE))
@@ -1560,6 +1572,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "purchase":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('💵 ᴘᴀʏ ᴠɪᴀ ᴜᴘɪ ɪᴅ 💵', callback_data='upi_info')
         ],[
             InlineKeyboardButton('📸 ꜱᴄᴀɴ ǫʀ ᴄᴏᴅᴇ 📸', callback_data='qr_info')
@@ -1575,6 +1594,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "upi_info":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('📲 ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ʜᴇʀᴇ', user_id=int(767250672))
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='purchase')
@@ -1601,6 +1627,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "seeplans":
         btn = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('📲 ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ', user_id=int(767250672))
         ],[
             InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ❌', callback_data='close_data')
@@ -1631,6 +1664,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "premium_info":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('• ꜰʀᴇᴇ ᴛʀɪᴀʟ •', callback_data='free')
         ],[
             InlineKeyboardButton('• ʙʀᴏɴᴢᴇ •', callback_data='broze'),
@@ -1653,6 +1693,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "free":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('⚜️ ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ɢᴇᴛ ꜰʀᴇᴇ ᴛʀɪᴀʟ', callback_data="give_trial")
         ],[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='other'),
@@ -1670,6 +1717,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "broze":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='free'),
@@ -1687,6 +1741,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "silver":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='broze'),
@@ -1704,6 +1765,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "gold":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='silver'),
@@ -1721,6 +1789,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "platinum":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='gold'),
@@ -1739,6 +1814,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "diamond":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('🔐 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ', callback_data='purchase')
         ],[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='platinum'),
@@ -1756,6 +1838,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "other":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('☎️ ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ', user_id=int(767250672))
         ],[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='diamond'),
@@ -1774,15 +1863,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
   
     elif query.data == "channels":
         buttons = [[
-            InlineKeyboardButton('⚜️ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ⚜️', url='https://t.me/HP_MOVIES_WORLD')
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
+            InlineKeyboardButton('• ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴘ •', url='https://t.me/movieboxbot1')
         ],[
-            InlineKeyboardButton('🔍 ɢʀᴏᴜᴘ¹', url='https://t.me/MoviesLinkSearchBot2'),
-            InlineKeyboardButton('ɢʀᴏᴜᴘ² 🔎', url='https://t.me/MoviesLinkSearchBot3')
+            InlineKeyboardButton('• ᴅɪꜱᴄᴜꜱꜱɪᴏɴ ɢʀᴏᴜᴘ •', url='https://t.me/moviesvisit')
         ],[
-            InlineKeyboardButton('✉️ ʀᴇǫᴜᴇꜱᴛ ɢʀᴏᴜᴘ ✉️', url='https://t.me/HpMovieRequest')
+            InlineKeyboardButton('• ʀᴇǫᴜᴇꜱᴛ ɢʀᴏᴜᴘ •', url='https://t.me/moviesvisit')
         ],[
             InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton('ꜱᴜᴘᴘᴏʀᴛ 👮', url='https://t.me/HpRequestBot')
+            InlineKeyboardButton('ꜱᴜᴘᴘᴏʀᴛ 👮', url='https://t.me/moviesvisit')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1793,6 +1888,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "users":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1804,6 +1906,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "group":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1817,6 +1926,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if query.from_user.id not in ADMINS:
             return await query.answer("⚠️ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀ ʙᴏᴛ ᴀᴅᴍɪɴ !", show_alert=True)        
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1829,6 +1945,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "help":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('• ʙᴏᴛ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='admic')
         ], [
             InlineKeyboardButton('• ᴜꜱᴇʀ •', callback_data='users'),
@@ -1844,11 +1967,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
         ], [
             InlineKeyboardButton ('• ᴄʀᴇᴅɪᴛꜱ ᴛᴏ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀꜱ •', callback_data='credits'),
         ], [
-            InlineKeyboardButton('• ᴏᴡɴᴇʀ •', user_id=int(767250672)),
+            InlineKeyboardButton('• ᴏᴡɴᴇʀ •', user_id=int(6551906246)),
             InlineKeyboardButton('• ꜱᴛᴀᴛꜱ •', callback_data='stats')
         ], [
             InlineKeyboardButton('🛰️ ʀᴇɴᴅᴇʀɪɴɢ ꜱᴛᴀᴛᴜꜱ ☁️',callback_data='rendr')
@@ -1877,6 +2007,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "stats":
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('⟲ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
@@ -1896,6 +2033,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("ꜰᴇᴛᴄʜɪɴɢ ᴍᴏɴɢᴏ-ᴅʙ ᴅᴀᴛᴀʙᴀꜱᴇ...")
         buttons = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('⟲ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
@@ -1914,6 +2058,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "shortlink_info":
             btn = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton("1 / 3", callback_data="pagesn1"),
             InlineKeyboardButton("ɴᴇxᴛ ⋟", callback_data="shortlink_info2")
             ],[
@@ -1927,6 +2078,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )   
     elif query.data == "shortlink_info2":
             btn = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton("⋞ ʙᴀᴄᴋ", callback_data="shortlink_info"),
             InlineKeyboardButton("2 / 3", callback_data="pagesn1"),
             InlineKeyboardButton("ɴᴇxᴛ ⋟", callback_data="shortlink_info3")
@@ -1941,6 +2099,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
     elif query.data == "shortlink_info3":
             btn = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
             InlineKeyboardButton("⋞ ʙᴀᴄᴋ", callback_data="shortlink_info2"),
             InlineKeyboardButton("3 / 3", callback_data="pagesn1")
             ],[
@@ -1955,6 +2120,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "disclaimer":
             btn = [[
+                    InlineKeyboardButton('🏡', callback_data="start"),
+                    InlineKeyboardButton('🗿', callback_data='channels'),
+                    InlineKeyboardButton('🎫', callback_data='premium_info'),
+                    InlineKeyboardButton('💸', callback_data='shortlink_info'),
+                    InlineKeyboardButton('🖥', callback_data='help'),
+                    InlineKeyboardButton('🌚', callback_data='premium_info')
+                ],[
                     InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="about")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
@@ -2064,7 +2236,7 @@ async def auto_filter(client, msg, spoll=False):
         if len(message.text) < 100:
             search = message.text
             m=await message.reply_sticker("CAACAgQAAxkBAAEKSxplArIUActk4ORQuFn3DHFvBqQCOgACBQMAAnJxFyVYcSIunXgGjjAE",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Seaching for {search} 🔎', url=f"https://t.me/HP_MOVIES_WORLD")]]) 
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Seaching for {search} 🔎', url=f"https://t.me/movieboxbot1")]]) 
             )
             search = search.lower()
             find = search.split(" ")
@@ -2095,7 +2267,7 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
         m=await message.reply_sticker("CAACAgQAAxkBAAEKSxplArIUActk4ORQuFn3DHFvBqQCOgACBQMAAnJxFyVYcSIunXgGjjAE",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Seaching for {search} 🔎', url=f"https://t.me/HP_MOVIES_WORLD")]]) 
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f'Seaching for {search} 🔎', url=f"https://t.me/movieboxbot1")]]) 
         )
         settings = await get_settings(message.chat.id)
         await msg.message.delete()
@@ -2300,7 +2472,7 @@ async def advantage_spell_chok(client, msg):
         if not g_s:
             reqst_gle = query.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/HpMovieRequest")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/movieboxbot1")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2337,7 +2509,7 @@ async def advantage_spell_chok(client, msg):
         if not movielist:
             reqst_gle = query.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/HpMovieRequest")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/movieboxbot1")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2378,7 +2550,7 @@ async def advantage_spell_chok(client, msg):
             logger.exception(e)
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/HpMovieRequest")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/movieboxbot1")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2393,7 +2565,7 @@ async def advantage_spell_chok(client, msg):
         if not movies:
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/HpMovieRequest")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/movieboxbot1")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
